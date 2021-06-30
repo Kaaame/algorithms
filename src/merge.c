@@ -3,8 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <limits.h>
-
-#define ARRAY_SIZE(x) (sizeof(x)/sizeof(typeof(x[0])))
+#include "merge.h"
 
 int merge(int *A, int p, int q, int r) {
 	int n1 = q - p, n2 = r - q;
@@ -42,10 +41,4 @@ int test_merge() {
 
 	assert(memcmp(merge_input_data, merge_expected_data,
 	       ARRAY_SIZE(merge_input_data)) == 0);
-}
-
-int main() {
-	test_merge();
-
-	return 0;
 }
